@@ -46,9 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #Para crear el vínculo con la aplicación de Blog, usar comando: python manage.py startapp blog
-
-    'blog'
-
+    'blog',
+    #se intalan el crispy forms con el cmd con el comando pip3 install django-crispy-forms
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
