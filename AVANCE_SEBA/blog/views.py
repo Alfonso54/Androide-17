@@ -1,5 +1,6 @@
 from urllib import response
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import AutoForm
 
 from blog.models import BlogsPost #Esto es para la aplicación y sección de blogs
 
@@ -16,7 +17,7 @@ def saludo(request):
 
 def homepagecolor(request):
     #Ingresar archivo css
-
+    
     return render (request, 'homepageindex.html')
 
 def blog_index(request):

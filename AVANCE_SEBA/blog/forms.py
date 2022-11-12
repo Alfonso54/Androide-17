@@ -1,8 +1,7 @@
 from django import forms 
-from .models import auto
+from .models import Auto
 
 class AutoForm(forms.ModelForm):
     class meta:
-        model = auto
+        model = Auto
         exclude = ['timestamp']
-        
