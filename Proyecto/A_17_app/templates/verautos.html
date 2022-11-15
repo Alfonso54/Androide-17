@@ -1,0 +1,29 @@
+{% block content %}
+
+    {% block content1 %}
+
+        <h2>Autos</h2>
+        <p>
+            <a href="{% url 'subirauto' %}" class = "btn btn-primary">Subir auto</a>
+        </p>
+
+    {% endblock %}
+
+        <table class="table table-striped table-bordered dt-responsive nowrap" cellspacing="10" aria-describedby="mydesc">
+        <thead>
+            <tr>
+                <th id="modelo">Modelo</th>
+                <th id="marca">Marca</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Auto in autos %}
+                <tr>
+                    <td>{{ Auto.modelo }}</td>
+                    <td>{{ Auto.marca }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
