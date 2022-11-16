@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Auto
-from .forms import AutoForm
+from .forms import AutoForm, NewRegister
 
 # Create your views here.
 
@@ -25,3 +25,19 @@ def verautos(request):
 def revisarautos(request,pk):
     auto =Auto.objects.get(pk=pk)
     return render(request, 'revisarautos.html', {'auto':auto})
+
+def borrarauto(request, pk):
+    if request.method == "POST":
+        auto = Auto.objects.get(pk=pk)
+        auto.delete()
+    return redirect('verautos')
+
+def registerView(request):
+    if request.method == "POST":
+        form = NewRegister(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login.html')
+        else:
+            form = NewRegister()
+    return render(request,'register.html',{'NewRegister':NewRegister})

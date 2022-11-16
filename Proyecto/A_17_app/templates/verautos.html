@@ -23,6 +23,12 @@
                     <td><a href='{% url 'revisarautos' Auto.pk %}' >{{ Auto.modelo }}</a></td>
                     <td>{{ Auto.marca }}</td>
                     <td>{{ Auto.patente }}</td>
+                    <td>
+                        <form method="POST" action="{% url 'borrarauto' Auto.pk %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
