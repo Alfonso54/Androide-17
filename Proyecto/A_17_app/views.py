@@ -21,3 +21,7 @@ def subirauto(request):
 def verautos(request):
     autos = Auto.objects.all()
     return render(request, 'verautos.html', {'autos': autos})
+
+def revisarautos(request,pk):
+    auto =Auto.objects.get(pk=pk)
+    return render(request, 'revisarautos.html', {'auto':auto})

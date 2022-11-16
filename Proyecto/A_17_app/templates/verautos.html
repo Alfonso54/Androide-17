@@ -20,7 +20,7 @@
         <tbody>
             {% for Auto in autos %}
                 <tr>
-                    <td>{{ Auto.modelo }}</td>
+                    <td><a href='{% url 'revisarautos' Auto.pk %}' >{{ Auto.modelo }}</a></td>
                     <td>{{ Auto.marca }}</td>
                     <td>{{ Auto.patente }}</td>
                 </tr>
