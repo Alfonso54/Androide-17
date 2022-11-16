@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Auto
 from .forms import AutoForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 # Create your views here.
 
