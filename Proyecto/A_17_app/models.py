@@ -8,9 +8,3 @@ class Auto(models.Model):
     marca = models.CharField(max_length=100)
     patente = models.CharField(max_length=100, blank=True)
     fecha = models.DateTimeField(auto_now=True)
-
-class Log(models.Model):
-    username = models.CharField(max_length=100)
-    password = models.CharField(max_length=100)
-    password1 = password
-    password2 = password
