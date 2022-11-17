@@ -28,7 +28,10 @@
              <div class="form-group">
                 {{ form.password|as_crispy_field }}
              </div>
-             <button type="submit" class="btn btn-black">Ingresar</button>
+             <div>
+               <button type="submit" class="btn btn-black">Ingresar</button>
+               <button type="submit" class="btn btn-q"><a href="{% url 'register_url' %}">registrate</button>
+            </div>
           </form>
        </div>
     </div>

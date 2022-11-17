@@ -6,8 +6,7 @@ body {
 
 .main-head{
     height: 150px;
-    background: #FFF;
-   
+    background: rgb(255, 255, 255);
 }
 
 .sidenav {
@@ -71,5 +70,5 @@ body {
 
 .btn-black{
     background-color: rgb(42, 26, 220) !important;
-    color: #fff;
+    color: rgb(255, 255, 255);
 }

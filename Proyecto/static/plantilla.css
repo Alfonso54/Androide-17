@@ -73,3 +73,10 @@ body {
     background-color: rgb(220, 26, 26) !important;
     color: #fff;
 }
+.btn-q{
+    background-color: rgb(48, 29, 218) !important;
+    color: rgb(255, 255, 255);
+}
+a{
+    text-decoration: none;
+}
