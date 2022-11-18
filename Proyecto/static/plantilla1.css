@@ -1,5 +1,7 @@
 body {
     font-family: "Lato", sans-serif;
+    background-image: url(https://wallpaperaccess.com/full/2545756.jpg);
+    background-size: cover;
 }
 
 
@@ -59,8 +61,8 @@ body {
 
 
 .login-main-text{
-    margin-top: 20%;
-    padding: 60px;
+    margin-top: 35%;
+    padding: 100px;
     color: #fff;
 }
 
