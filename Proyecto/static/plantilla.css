@@ -14,7 +14,7 @@ body {
 
 .sidenav {
     height: 100%;
-    background-color: rgb(177, 139, 202);
+    background-color: rgba(177, 139, 202, 0.8);
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -74,11 +74,12 @@ body {
 .btn-black{
     background-color: rgb(220, 26, 26) !important;
     color: #fff;
+    font-size: 20px;
 }
 .btn-q{
     background-color: rgb(182, 181, 181) !important;
     color: rgb(255, 255, 255);
-    text-decoration: none;
+    font-size: 20px;
 }
 .form-group{
     color: rgb(255, 224, 188);
@@ -86,4 +87,8 @@ body {
 }
 h1{
     font-size: 100px;
+}
+.login-form{
+    padding: 50px;
+    margin-top: 55%;
 }
