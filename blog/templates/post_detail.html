@@ -1,6 +1,7 @@
 {%load static %}
 {% load crispy_forms_tags %}
 
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -99,11 +100,13 @@
   </div>
 </main>
 <div>
-<form method="post">
-    {% csrf_token %}
-    {{ form|crispy}}
-    <input type ="submit" name="enviar" value= "comentar"></input>
-</form>
+  <form method="post">
+      {% csrf_token %}
+      {{ form|crispy}}
+      <input id ="button" type ="submit" name="enviar" value= "comentar"></input>
+      <script src="{% static 'js/main.js' %}"></script>
+  </form>
+
     <div style="margin:20px">
     {% for comentario in comentarios  %}
     <h4 style= "font-family: courier"> {{comentario.nombre}}({{ comentario.created_on }}) :</h4>  <p>{{ comentario.contenido}}</p>
