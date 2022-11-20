@@ -1,24 +1,21 @@
 {%load static %}
-{% load crispy_forms_tags %}
 
-
-<!doctype html>
-<html lang="en" class="h-100">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Sticky Footer Template · Bootstrap v5.2</title>
+    <title>Top navbar example · Bootstrap v5.2</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sticky-footer/">
-
-    
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbar-static/">
 
     
 
-<link href="{% static 'css/post_detail.css' %}" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
+
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -85,41 +82,39 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="sticky-footer.css" rel="stylesheet">
+    <link href="navbar-top.css" rel="stylesheet">
   </head>
-  <body class="d-flex flex-column h-100">
+  <body>
     
-<!-- Begin page content -->
-<main class="flex-shrink-0">
-  <div class="container">
-    <h1 style= "font-family:courier" class="mt-5">{{ post.title }}</h1>
-    <div style="margin:20px">
-    <p class="lead">{{post.contenido}}</p>
-        <a href="/mainpage/">Back Home</a>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Cuida tu Tierra</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li>
+          <a href= "{% url 'login_url' %}">Login</a>
+        </li>
+      </ul>
     </div>
   </div>
-</main>
-<div>
-  <form method="post">
-      {% csrf_token %}
-      {{ form|crispy}}
-      <input id ="button" type ="submit" name="enviar" value= "comentar"></input>
-      <script src="{% static 'main.js' %}"></script>
-  </form>
+</nav>
 
-    <div style="margin:20px">
-    {% for comentario in comentarios  %}
-    <h4 style= "font-family: courier"> {{comentario.nombre}}({{ comentario.created_on }}) :</h4>  <p>{{ comentario.contenido}}</p>
-    <p>{{comentario.cantidad_likes}} likes</p>
-    <a href="{% url 'dar_like' comentario.id %}">
-      {% if tienelike %}
-        Dislike
-      {% else %}
-        Like
-      {% endif %}
-    </a>
+<main class="container">
+  <div class="bg-light p-5 rounded">
+    {% for publicacion in post %}
+
+    <h1>{{ publicacion.title}}</h1>
+    <p class="lead">{{ publicacion.contenido | slice:":200"}}</p>
+    <a class="btn btn-lg btn-primary" href="{% url 'post_detail' publicacion.id %}" role="button">Ver post &raquo;</a>
+
     {% endfor %}
-    </div>
-</div>
+  </div>
+</main>
   </body>
 </html>

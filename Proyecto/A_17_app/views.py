@@ -45,5 +45,4 @@ def registerView(request):
             return redirect('login_url')
         else:
             form = NewRegister()
-    
     return render(request,'registration/register.html',{'form':NewRegister})
