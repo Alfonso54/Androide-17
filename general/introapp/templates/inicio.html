@@ -4,15 +4,11 @@
 
 <head>
     <link rel="stylesheet" href="{% static 'style.css' %} " >  
-    <title>Acerca de</title>
+    <title>Fake News Nemesis</title>
     
-
 </head>
 
 <body>
-
-
-
 
     <header class="primero">
         <a href="" class="logo">
@@ -34,7 +30,6 @@
             {% endblock %}
         </nav>
 
-
     </header>
 
 </body>
@@ -42,9 +37,7 @@
   <h1 class="noticia">Noticias</h1>
     </header>
     <header class="segundo">
-        
-    
-        
+         
     <div class="row">
         <div class="lef-column">
             <div class="card">
@@ -68,17 +61,21 @@
                     <p></p>asdasd
                     <p></p>texto de descripcion
                     </div>
+
+            <div class="bg-light p-5 rounded">
+                {% for publicacion in post %}
+                      
+                    <h1>{{ publicacion.title}}</h1>
+                    <p class="lead">{{ publicacion.contenido | slice:":200"}}</p>
+                    <a class="lolo" href="{% url 'post_detail' publicacion.id %}" role="button">Ver post &raquo;</a>
+
+                {% endfor %}
+            </div>
         <div class="right-column">
-
-        </div>
-        </div>
-
     </div>
+    <footer>
+        Pagina creada en el 2022.
+    </footer>
 </header>
-
-    
-
-
-
 
 </html>

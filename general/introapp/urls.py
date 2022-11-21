@@ -4,7 +4,6 @@ from django.contrib.auth.views import LoginView,LogoutView
 from django.contrib import admin
 
 urlpatterns = [
-    path('dashboard/',views.dashboard,name="dashboard"),
     path('inicio/',views.inicio,name="inicio"),
     path('admin/', admin.site.urls),
     path('<int:post_id>/', views.post_detail, name='post_detail'),

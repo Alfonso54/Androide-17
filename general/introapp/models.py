@@ -18,7 +18,7 @@ class comentario(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     contenido = models.TextField()
     active = models.BooleanField(default=False)
-    likes = models.ManyToManyField(User, related_name='coment_likes')
+    likes = models.ManyToManyField(User, related_name='likes')
     def __str__(self):
         return f'comentario de {self.nombre}'
     def cantidad_likes(self):

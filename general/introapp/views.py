@@ -5,11 +5,10 @@ from django.contrib.auth import login
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 
-def dashboard(request):
-    return render (request,'dashboard.html')
 
 def inicio(request):
-    return render (request, 'inicio.html')
+    post = Post.objects.all()
+    return render (request, 'inicio.html',{'post':post})
 
 
 def registerView(request):
@@ -47,7 +46,7 @@ def post_detail(request,post_id):
 
 def darlike(request, pk):
     post = get_object_or_404(comentario, id=pk)
-    if request.user in comentario.likes.all():
+    if request.user in post.likes.all():
         post.likes.remove(request.user)
     else: 
         post.likes.add(request.user)
