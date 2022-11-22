@@ -15,7 +15,7 @@
   </div>
 </main>
 <div>
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form|crispy}}
       <input id ="button" type ="submit" name="enviar" value= "comentar"></input>
@@ -34,6 +34,11 @@
       {% endif %}
     </a>
     {% endfor %}
+    <td>
+      {% if post.imagen %}
+        <img src="{{a.imagen.url}}" width="200" height="200">
+      {% endif %}
+    </td>
     </div>
 </div>
   </body>

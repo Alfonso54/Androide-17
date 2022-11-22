@@ -30,7 +30,6 @@ def comentar(request,pk):
 def post_detail(request,post_id):
     post = Post.objects.get(id=post_id)
     comentarios = post.comentarios.filter(active=True)
-    
     if request.method == "POST":
         form = CommentForm(request.POST)
 
@@ -42,7 +41,7 @@ def post_detail(request,post_id):
     else:
         form = CommentForm
 
-    return render(request, 'post_detail.html',{'post':post, 'comentarios':comentarios,'form':form,})
+    return render(request, 'post_detail.html',{'post':post, 'comentarios':comentarios,'form':form})
 
 def darlike(request, pk):
     post = get_object_or_404(comentario, id=pk)
@@ -50,7 +49,7 @@ def darlike(request, pk):
         post.likes.remove(request.user)
     else: 
         post.likes.add(request.user)
-    return redirect('/comentario/'+ str(comentario.id))
+    return render(request, 'post_detail.html', {'post': post})
 
 
 

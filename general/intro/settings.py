@@ -138,3 +138,6 @@ LOGIN_URL = "/introapp/inicio/"
 LOGIN_REDIRECT_URL = "../inicio/"
 
 LOGOUT_REDIRECT_URL = "../inicio/"
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
