@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="{% static 'pub1.css' %} " >  
+    <title>Fake News Nemesis</title>
+    
+</head>
+
+<body>
+
+    <header class="primero">
+        <a href="/introapp/inicio/" class="logo">
+            <img src="{% static 'planet.jpg' %}">
+            <h1 >  </h1>
+        <h1>Fake News Nemesis</h1>
+        </a>
+
+        <nav>
+            {% block content %}
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="nav-link">Salir</a>
+                {% else %}
+                <a href="{% url 'login_url' %}" class="nav-link">Ingresa</a>
+                <a href="{% url 'register_url' %}" class="nav-link">Regístrate</a>
+            {% endif %}
+           
+            {% endblock %}
+        </nav>
+
+    </header>
+
+</body>
+    <header class="fondo-noticia">
+  <h1 class="noticia">Noticias</h1>
+    </header>
+    <header class="segundo">
+         
+    <div class="row">
+            <div class="card">
+                {% for publicacion in post %}
+                      
+                <h1 class="letras">{{ publicacion.title}}</h1>
+                
+                <p class="lead">{{ publicacion.contenido | slice:":200"}}</p>
+                <img src="{% static 'hoyo.jpg' %}" class="logo2">
+                <a class="lolo" href="{% url 'post_detail' publicacion.id %}" role="button">Ver post &raquo;</a>
+                    
+            {% endfor %}
+                    
+         
+        
+            
+        
+    </div>
+   
+   
+   
+    <footer>
+        Pagina creada en el 2022.
+    </footer>
+</header>
+
+</html>
+

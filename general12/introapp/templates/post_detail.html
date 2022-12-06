@@ -1,0 +1,84 @@
+{%load static %}
+{% load crispy_forms_tags %}
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %} " >  
+    <title>Fake News Nemesis</title>
+    
+</head>
+
+<body>
+
+    <header class="primero">
+        <a href="/introapp/inicio/"  class="logo">
+            <img src="{% static 'planet.jpg' %}">
+            <h1 >  </h1>
+        <h1>Fake News Nemesis</h1>
+        </a>
+
+        <nav>
+            {% block content %}
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="nav-link">Salir</a>
+                {% else %}
+                <a href="{% url 'login_url' %}" class="nav-link">Ingresa</a>
+                <a href="{% url 'register_url' %}" class="nav-link">Regístrate</a>
+            {% endif %}
+           
+            {% endblock %}
+        </nav>
+
+    </header>
+
+</body>
+    <header class="fondo-noticia">
+  <h1 class="noticia">Noticias</h1>
+    </header>
+    <header class="segundo">
+         
+
+
+
+<!doctype html>
+<html lang="en" class="h-100">
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <h1 style= "font-family:courier" class="mt-5">{{ post.title }}</h1>
+    <div style="margin:20px">
+    <p class="lead">{{post.contenido}}</p>
+    <img src="{% static 'planet.jpg' %}" class="logo3">
+    <a href="/introapp/inicio/" class="like">Back Home</a>
+    </div>
+  </div>
+</main>
+<div>
+  <form method="post">
+      {% csrf_token %}
+      {{ form|crispy}}
+      <input id ="button" type ="submit" name="enviar" value= "comentar"></input>
+      <script src="{% static 'main.js' %}"></script>
+  </form>
+
+    <div style="margin:20px">
+    {% for comentario in comentarios  %}
+    <h4 style= "font-family: courier"> {{comentario.nombre}}({{ comentario.created_on }}) :</h4>  <p>{{ comentario.contenido}}</p>
+    <p>{{comentario.cantidad_likes}} likes</p>
+    <a href="{% url 'dar_like' comentario.id %}" class="like">
+      {% if tienelike %}
+        Dislike
+      {% else %}
+        Like
+      {% endif %}
+    </a>
+    {% endfor %}
+    </div>
+</div>
+  </body>
+</html>

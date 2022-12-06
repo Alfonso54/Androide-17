@@ -1,0 +1,121 @@
+body{
+    font-family: sans-serif;/*   */
+    background-color: rgb(230, 230, 230);
+    margin: 0;
+    background-image: url(https://img.freepik.com/vector-premium/fondo-topografia_23-2148573404.jpg?w=360);
+    background-size: auto;
+}
+
+a{
+    color: white;/*   */
+    text-decoration: none;/*   */
+}
+
+
+
+.lolo{
+    color: rgb(93, 0, 180);
+    font-weight: 600;
+}
+
+.primero{
+    background-color: black;/*   */
+    display: flex;/*   */
+    min-height: 70px;/*   */
+    justify-content: space-between; 
+    padding: 10px;/*  tira hacia dentro */
+}
+
+.logo{
+    display: flex;/*   */
+    
+}
+
+.logo img{
+    height: 110px;/*   */
+    margin-right: 12px;/*   */
+}
+
+nav a{
+
+    font-weight: 800; /*  relleno de las letras */
+    padding-right: 20px;/*   */
+    font-size: 20px;
+}
+
+.like{
+
+    color:blue;
+}
+
+
+.segundo{
+   
+    font-family:  Arial ;
+    display: flex;
+    padding: 20 px;
+    background-color:rgba(255, 255, 255, 0.596);
+    margin: 40px;
+    width: 94%;
+    float: left;
+
+
+}
+
+.logo2{
+    display: auto;
+    height: 500px;
+    width: 60%;
+  margin-left: 310px;
+  margin-right: 30px;
+  
+}
+
+h4{
+    font-size: 80%;
+}
+
+.logo3{
+    display: auto;
+    height: 400px;
+    width: 45%;
+  margin-left: 100px;
+  margin-right: 30px;
+  
+}
+
+.fondo-noticia{
+    
+    font-size: 40px;
+    color: #000000;
+    margin:1.5 0px;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.card{
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+footer{
+
+    background-color: rgba(141, 141, 141, 0.637);
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    margin-left: 150px;
+  margin-right: 30px;
+}
+
+.letras{
+    margin-left: 220px;
+  margin-right: 30px;
+    font-size: 50px;
+}
+
+.lead{
+    text-align: center;
+}
